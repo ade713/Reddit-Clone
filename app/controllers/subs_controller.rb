@@ -1,6 +1,7 @@
 class SubsController < ApplicationController
 
   before_action :require_mod, only: [:edit, :update]
+  before_action :require_logged_in, only: [:new, :create]
 
   def index
     @subs = Sub.all

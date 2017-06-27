@@ -3,6 +3,8 @@ class User < ApplicationRecord
   validates :session_token, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
+  has_many :comments
+
   has_many :subs,
     primary_key: :id,
     foreign_key: :mod_id,
